@@ -130,13 +130,12 @@ with open(listingFileName) as testFile:
             prodListings[prId-1]['listings'].append(dat);
         if bTestMode:
             testOpFile.write(str(prId) + "\n")
-        print testIndex, (T2-T1)*1e3
+        print testIndex, 'T(ms):', (T2-T1)*1e3
 
 if bTestMode:   
     testOpFile.close()
 
-
-with open('Outputdata.txt', 'wb') as opFile:
+with open('OutputData.txt', 'wb') as opFile:
     #json.dump(prodListings, opFile)
     bFirstTime = True;
     for prod in prodListings:
@@ -146,6 +145,5 @@ with open('Outputdata.txt', 'wb') as opFile:
         opFile.write(s)
         bFirstTime = False;
         
-    #opFile.write()
-    #json.dumps()
+print 'Output is stored in file: OutputData.txt'
     
