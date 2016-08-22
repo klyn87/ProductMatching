@@ -130,7 +130,9 @@ with open(listingFileName) as testFile:
             prodListings[prId-1]['listings'].append(dat);
         if bTestMode:
             testOpFile.write(str(prId) + "\n")
-        print testIndex, 'T(ms):', (T2-T1)*1e3
+        
+        if(testIndex % 1000 == 0):
+            print testIndex, 'T(ms):', (T2-T1)*1e3
 
 if bTestMode:   
     testOpFile.close()
